@@ -1,0 +1,48 @@
+//customers-section
+.our-customers{
+    font-weight: 700;
+    font-size: $title-font-size;
+    line-height: $line-height-g;
+    text-align: center;
+    margin: 0 0 50px 0;
+}
+//customers-link-svg
+.list-cust{
+    @extend %disply_flex-center;
+    gap: 30px;
+    &__item{
+        display: table;
+        width: 170px;
+        height: 92px;
+    }
+        &__link{
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid $border-color; 
+            border-radius: $border-radius;
+            //animation
+            @extend %animation_background-color;
+            @extend %animation_box-shadow;
+        }
+            &__icon{
+                fill: $nav-color-c;
+            }
+                &__svg{
+                    position: absolute;
+                    //animation
+                    @extend %animation_fill;
+                }   
+}            
+//customers-link-svg-effects
+.list-cust__link:hover, .list-cust__link:focus,
+.list-cust__link:active{
+    border: 1px solid $nav-color; 
+    border-radius: $border-radius;
+    @extend %box-shadow-standard;
+}
+    .list-cust__link:hover .list-cust__svg, 
+    .list-cust__link:focus .list-cust__svg,
+    .list-cust__link:active .list-cust__svg{
+        fill: $nav-color;
+    }
